@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HX Expenditure Simulation</title>
+    <title>HX ROI Simülasyonu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- Left side inputs -->
         <div class="input-section">
-            <h2>Simulation Inputs</h2>
-            <label for="stoppage-slider">Conveyor Stoppage per Year (Hours):</label>
+            <label for="stoppage-slider">Yıl Boyunca Toplam Duruş Süresi (Saat):</label>
             <input type="range" id="stoppage-slider" min="0" max="48" step="1" value="24">
             <span id="stoppage-value">24</span> hours
             
-            <label for="profit-slider">Lost Production Profit per Hour (€):</label>
+            <label for="profit-slider">Duruş Saati Başına Üretim Karından Zarar (€):</label>
             <input type="range" id="profit-slider" min="0" max="20000" step="100" value="10000">
             <span id="profit-value">10000</span> €
 
