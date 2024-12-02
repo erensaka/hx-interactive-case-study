@@ -30,7 +30,7 @@ let expenditureChart = new Chart(ctx, {
         labels: [], // X-axis: Hours
         datasets: [
             {
-                label: "HX kullanılmadığında maliyet (€)",
+                label: "HX kullanılmadığında toplam harcama (€)",
                 data: [],
                 borderColor: "red",
                 borderWidth: 2,
@@ -38,7 +38,7 @@ let expenditureChart = new Chart(ctx, {
                 fill: false,
             },
             {
-                label: "HX kullanıldığında maliyet (€)",
+                label: "HX kullanıldığında toplam harcama (€)",
                 data: [],
                 borderColor: "green",
                 borderWidth: 2,
