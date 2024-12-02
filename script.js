@@ -30,7 +30,7 @@ let expenditureChart = new Chart(ctx, {
         labels: [], // X-axis: Hours
         datasets: [
             {
-                label: "Total Expenditure Without HX (€)",
+                label: "HX kullanılmadığında maliyet (€)",
                 data: [],
                 borderColor: "red",
                 borderWidth: 2,
@@ -38,7 +38,7 @@ let expenditureChart = new Chart(ctx, {
                 fill: false,
             },
             {
-                label: "Total Expenditure With HX (€)",
+                label: "HX kullanıldığında maliyet (€)",
                 data: [],
                 borderColor: "green",
                 borderWidth: 2,
@@ -50,13 +50,13 @@ let expenditureChart = new Chart(ctx, {
     options: {
         responsive: true,
         scales: {
-            x: { title: { display: true, text: "Hours" } },
-            y: { title: { display: true, text: "Expenditure (€)" } },
+            x: { title: { display: true, text: "Saat" } },
+            y: { title: { display: true, text: "Maliyet (€)" } },
         },
     },
 });
 
-// Calculate and update the chart
+
 function updateChart() {
     const stoppage = Number(stoppageSlider.value);
     const profit = Number(profitSlider.value);
@@ -64,7 +64,6 @@ function updateChart() {
     const beltPrice = Number(beltPriceSlider.value);
     const repair = Number(repairSlider.value);
 
-    // Prepare data points
     let hours = [];
     let withoutHX = [];
     let withHX = [];
@@ -85,14 +84,12 @@ function updateChart() {
         hours.push(i);
     }
 
-    // Update chart data
     expenditureChart.data.labels = hours;
     expenditureChart.data.datasets[0].data = withoutHX;
     expenditureChart.data.datasets[1].data = withHX;
     expenditureChart.update();
 }
 
-// Event listeners
 document.querySelectorAll("input[type='range']").forEach((slider) => {
     slider.addEventListener("input", () => {
         updateValues();
@@ -100,6 +97,5 @@ document.querySelectorAll("input[type='range']").forEach((slider) => {
     });
 });
 
-// Initialize
 updateValues();
 updateChart();
